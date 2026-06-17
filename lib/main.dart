@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
+import 'screens/character_list_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await Hive.openBox("characters");
+  await Hive.openBox("spells");
   runApp(const MyApp());
 }
 
@@ -13,24 +19,9 @@ class MyApp extends StatelessWidget {
       title: 'Wizarding World',
       theme: ThemeData(
         primarySwatch: Colors.red,
+        fontFamily: 'Arial',
       ),
-      home: const HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Wizarding World'),
-      ),
-      body: const Center(
-        child: Text('Lista postaci'),
-      ),
+      home: const CharacterListScreen(),
     );
   }
 }
