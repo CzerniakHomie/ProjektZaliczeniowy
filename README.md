@@ -1,17 +1,26 @@
-# projekt_zaliczeniowy_jc
+# Wizarding World
+Aplikacja mobilna stworzona we Flutterze wyświetlająca dane z Harry Potter API.
 
-A new Flutter project.
+## Opis
+Aplikacja pozwala przeglądać postacie ze świata Harry Pottera oraz zaklęcia.
+Działa w trybie offline dzięki lokalnej bazie danych Hive CE.
 
-## Getting Started
+## Użyte API
+https://hp-api.onrender.com/
 
-This project is a starting point for a Flutter application.
+## Ekrany
+- **Lista postaci** — wyświetla bohaterów z imionami, domami i gatunkiem
+- **Szczegóły postaci** — zdjęcie, dom, aktor, gatunek, status życia
+- **Lista zaklęć** — zaklęcia z opisami
 
-A few resources to get you started if this is your first Flutter project:
+## Technologie
+- Flutter / Dart
+- http ^1.0.0 — komunikacja z REST API
+- hive_ce ^2.19.3 — lokalna baza danych (tryb offline)
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Funkcje
+- Pobieranie danych z dwóch endpointów REST API
+- Tryb offline — dane zapisywane lokalnie w Hive CE
+- Obsługa stanu ładowania (CircularProgressIndicator)
+- Obsługa błędów sieciowych
+- Nawigacja między trzema ekranami
